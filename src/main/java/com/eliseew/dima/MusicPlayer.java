@@ -1,26 +1,29 @@
 package com.eliseew.dima;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
-    private Music music;
+    private List<Music> music = new ArrayList<>();
     private String volume;
     //IoC
-    public MusicPlayer(Music music) {
+    public MusicPlayer(List<Music> music) {
         this.music = music;
     }
+    public void setMusic(List<Music> music) {
+        this.music = music;
+    }
+    public MusicPlayer() {}
 
     public void setVolume(String volume) {
         this.volume = volume;
     }
-
     public String getVolume() {
         return volume;
     }
-
-    public MusicPlayer() {}
-
-    public void setMusic(Music music) {
-        this.music = music;
+    public void playMusic(){
+        for (Music value : music) {
+            System.out.println("Playing: " + value.getSong());
+        }
     }
-
-    public void playMusic(){System.out.println("Playing: "+music.getSong());}
 }
