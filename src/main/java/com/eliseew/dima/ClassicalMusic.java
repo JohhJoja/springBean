@@ -1,8 +1,23 @@
 package com.eliseew.dima;
 
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component
 public class ClassicalMusic implements Music{
 
+    @PostConstruct
+    public void doNIT(){
+        System.out.println("INIT!!!!");
+    }
+    @PreDestroy
+    public void DESTROY(){
+        System.out.println("DESTROY!!!!");
+    }
     private ClassicalMusic() {}
+
 
     public static ClassicalMusic getClassicalMusic(){
         System.out.println("FACTORY!");

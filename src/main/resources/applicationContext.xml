@@ -7,24 +7,13 @@
  http://www.springframework.org/schema/context
  http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="com.eliseew.dima"/>
+
     <context:property-placeholder location="classpath:musicPlayer.properties" />
 
-    <bean id="classic_musicBean" class="com.eliseew.dima.ClassicalMusic"
-          init-method="doMyInitM" destroy-method="doMyDestroy" scope="prototype"
-          factory-method="getClassicalMusic"
-    />
-    <bean id="rock_musicBean" class="com.eliseew.dima.RockMusic"/>
-    <bean id="pop_musicBean" class="com.eliseew.dima.PopMusic"/>
-
-    <bean id="musicPlayer" class="com.eliseew.dima.MusicPlayer" scope="prototype">
-        <property name="music">
-            <list>
-                <ref bean="classic_musicBean"/>
-                <ref bean="rock_musicBean"/>
-                <ref bean="pop_musicBean"/>
-            </list>
-        </property>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="classic_musicBean" class="com.eliseew.dima.ClassicalMusic"-->
+<!--          init-method="doMyInitM" destroy-method="doMyDestroy" scope="prototype"-->
+<!--          factory-method="getClassicalMusic"-->
+<!--    />-->
 
 </beans>
