@@ -12,17 +12,22 @@ import java.util.List;
 @Component
 @Scope("singleton")
 public class MusicPlayer {
+    @Autowired
     private List<Music> music = new ArrayList<>();
+    @Autowired
+    @Qualifier("classicalMusic")
     Music music_1;
     @Value("${musicPlayer.volume}")
     private String volume;
 
     //IoC
-    @Autowired
-    public MusicPlayer(List<Music> music, @Qualifier("rockMusic") Music m1) {
-        this.music = music;
-        this.music_1 = m1;
-    }
+//    @Autowired
+//    public MusicPlayer(List<Music> music
+////            , @Qualifier("rockMusic") Music m1
+//    ) {
+//        this.music = music;
+////        this.music_1 = m1;
+//    }
     public void setMusic(List<Music> music) {
         this.music = music;
     }
