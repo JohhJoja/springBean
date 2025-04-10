@@ -15,5 +15,6 @@
 <!--          init-method="doMyInitM" destroy-method="doMyDestroy" scope="prototype"-->
 <!--          factory-method="getClassicalMusic"-->
 <!--    />-->
+<!--    -->
 
 </beans>
